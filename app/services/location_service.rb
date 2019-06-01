@@ -5,16 +5,21 @@ class LocationService
   end
 
   def lat
-    long_lat[:lat].truncate(4)
+    lat_long[:lat].truncate(4)
   end
 
   def long
-    long_lat[:lng].truncate(4)
+    lat_long[:lng].truncate(4)
   end
 
-  def long_lat
+  def lat_long
     results = get_json[:results][0]
     results[:geometry][:location]
+  end
+
+  def details
+    info = get_json[:results][0]
+    info[:address_components]
   end
 
   private
@@ -31,5 +36,5 @@ class LocationService
       f.adapter Faraday.default_adapter
     end
   end
-  
+
 end
