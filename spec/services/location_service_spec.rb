@@ -3,15 +3,15 @@ require 'rails_helper'
 describe 'LocationService', type: :service do
   describe 'Instance Methods' do
 
-    context '#long_lat' do
+    context '#lat_long' do
       it 'returns original API data in the form of a hash' do
 
         location = "denver,co"
-        long_lat = LocationService.new(location).long_lat
+        lat_long = LocationService.new(location).lat_long
 
-        expect(long_lat.class).to eq(Hash)
-        expect(long_lat[:lat]).to eq(39.7392358)
-        expect(long_lat[:lng]).to eq(-104.990251)
+        expect(lat_long.class).to eq(Hash)
+        expect(lat_long[:lat]).to eq(39.7392358)
+        expect(lat_long[:lng]).to eq(-104.990251)
       end
     end
 
