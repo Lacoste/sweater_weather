@@ -31,4 +31,5 @@ class LocationService
       f.adapter Faraday.default_adapter
     end
   end
+  
 end
