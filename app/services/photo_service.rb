@@ -1,7 +1,11 @@
 class PhotoService
 
-  def initialize(city_name)
-    @city_name = city_name
+  def initialize(search_info)
+    @city_name = search_info.split(",")[0]
+  end
+
+  def api_response  
+    get_json(@city_name)
   end
 
   def city_image
@@ -21,7 +25,6 @@ class PhotoService
       f.params['client_id']=ENV['UNSPLASH_API_KEY']
       f.params['orientation']='portrait'
       f.params['page']=1
-      f.params['page_per']=1
       f.adapter Faraday.default_adapter
     end
   end
