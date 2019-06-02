@@ -25,9 +25,9 @@ class WeatherDataSerializer
         details: {
           icon: @currently[:icon],
           conditions: @currently[:summary],
-          feels_like: @currently[:apparentTemperature],
-          humidity: @currently[:humidity],
-          visibility: @currently[:visibility],
+          feels_like: @currently[:apparentTemperature].round,
+          humidity: "#{(@currently[:humidity] * 100).round}%",
+          visibility: "#{'%.2f' % (@currently[:visibility])} miles",
           uv_index: @currently[:uvIndex],
           summary: @today[:summary],
         },
