@@ -1,8 +1,8 @@
 class WeatherDataSerializer
 
-  def initialize(weather_data, location_details)
+  def initialize(weather_data, location)
+    @location = location
     @currently = weather_data[:currently]
-    @location_details = location_details
     @today = weather_data[:daily][:data][0]
     @hourly = weather_data[:hourly][:data][1..8]
     @rest_of_week = weather_data[:daily][:data][1..5]
@@ -17,8 +17,8 @@ class WeatherDataSerializer
           temp: @currently[:temperature].round,
           high: @today[:temperatureHigh].round,
           low: @today[:temperatureLow].round,
-          city_state: "#{@location_details[0][:short_name]}, #{@location_details[2][:short_name]}",
-          country: @location_details[3][:long_name],
+          city_state: "#{@location.name}, #{@location.state_abrev}",
+          country: @location.country,
           search_time: Time.at(@currently[:time]).strftime("%l:%M %p"),
           date: Time.at(@currently[:time]).strftime("%m/%d")
         },
