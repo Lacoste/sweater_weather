@@ -9,4 +9,5 @@ describe Cities, type: :model do
     it {should validate_presence_of :state_abrev}
     it {should validate_presence_of :country}
   end
+  
 end
