@@ -9,6 +9,10 @@ class Api::V1::ForecastController < ApplicationController
 
   def location
     @_city ||= Cities.find_or_create_city(params[:location])
+    @_city.find_or_create_background
+    return @_city
   end
+
+
 
 end

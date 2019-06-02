@@ -21,4 +21,11 @@ class Cities < ApplicationRecord
     end
   end
 
+  def find_or_create_background
+    unless self.background_img.present?
+      background = PhotoService.new(self.search_name)
+      self.background_img = background.city_image
+    end
+  end
+
 end
