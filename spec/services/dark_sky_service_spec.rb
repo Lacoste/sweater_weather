@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'DarkSkyService' do
-  describe 'Instance Variables' do
+  describe 'Instance Methods' do
 
     context '#all_info' do
       it 'returns all weather data' do
