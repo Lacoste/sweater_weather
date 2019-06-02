@@ -29,4 +29,46 @@ describe Cities, type: :model do
       end
     end
   end
+
+  describe 'Instance Methods' do
+    context '#find_or_create_background' do
+      it 'finds a background_img for a city if it does not already have one' do
+        denver = Cities.create(
+          { search_name: "denver,co",
+            latitude: 39.7392,
+            longitude: 104.9902,
+            name:"Denver",
+            state_abrev: "CO",
+            country: "United States",
+            background_img: nil }
+        )
+
+        expect(denver.background_img).to eq(nil)
+
+        new_image = denver.find_or_create_background
+
+        expect(denver.background_img).to eq(new_image)
+        expect(denver.background_img.class).to eq(String)
+      end
+
+      it 'does not creates a background_img for a city which already has one' do
+        denver = Cities.create(
+          { search_name: "denver,co",
+            latitude: 39.7392,
+            longitude: 104.9902,
+            name:"Denver",
+            state_abrev: "CO",
+            country: "United States",
+            background_img: "fake-phot-url" }
+        )
+
+        expect(denver.background_img).to eq("fake-phot-url")
+        expect(denver.background_img.present?).to eq(true)
+
+        denver.find_or_create_background
+
+        expect(denver.background_img).to eq("fake-phot-url")
+      end
+    end
+  end
 end
