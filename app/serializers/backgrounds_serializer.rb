@@ -1,7 +1,7 @@
 class BackgroundsSerializer
 
   def initialize(background_data)
-    @background_data = background_data
+    @background_data = background_data.list
   end
 
   def to_hash
