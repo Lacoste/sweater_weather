@@ -12,6 +12,7 @@ class AntipodLocationService
   private
 
   def get_json
+    binding.pry
     response = conn.get
     JSON.parse(response.body, symbolize_names: true)
   end

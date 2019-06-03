@@ -12,9 +12,10 @@ describe 'GET /api/v1/antipode' do
     expect(antipode_info.class).to eq(Hash)
     expect(antipode_info[:data].present?).to eq(true)
 
-    expected_keys = :id, :type, :attributes, :search_location
+    expected_keys = :id, :type, :attributes
 
     expect(antipode_info[:data].present?).to eq(true)
     expect(antipode_info[:data].keys).to eq(expected_keys)
+    # expect(antipode_info[:data].keys).to eq(expected_keys)
   end
 end
