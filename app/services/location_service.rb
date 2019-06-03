@@ -24,7 +24,12 @@ class LocationService
 
   def anti_name
     info = get_antipod_json
-    info[:results][1][:address_components][0][:short_name]
+    info[:results][1][:address_components][0][:long_name]
+  end
+
+  def search_name
+    info = get_city_json
+    info[:results][0][:address_components][0][:long_name]
   end
 
   private
@@ -42,7 +47,6 @@ class LocationService
   def conn
     Faraday.new('https://maps.googleapis.com/maps/api/geocode/json') do |f|
       f.params['key']=ENV['GOOGLE_API_KEY']
-      # f.params['address']=@location
       f.adapter Faraday.default_adapter
     end
   end
