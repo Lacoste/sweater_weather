@@ -1,24 +1,24 @@
 class AntipodeWeatherSerializer
 
-  def initialize(weather_data, search_loc)
+  def initialize(weather_data, search_loc, antipode_name)
     @weather_data = weather_data.api_weather_data[:currently]
-    @search_loc = search_loc
-    # binding.pry
+    @antipode = Cities.find_by(name: antipode_name)
+    # @search_city = Cities.find_or_create_city(search_loc)
   end
 
 def to_hash
   {
     data:
         {
-            id: "1",
+            id: @antipode.id,
             type: "antipode",
             attributes: {
-                location_name: "Antipode City Name",
+                location_name: @antipode.name,
                 forecast: {
                     summary: @weather_data[:summary],
                     current_temperature: @weather_data[:temperature].round,
                 				},
-            search_location: "Hong Kong"
+                search_location: "Need Data!"
             }
         }
     }
