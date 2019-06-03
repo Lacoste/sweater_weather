@@ -32,7 +32,7 @@ describe 'POST /api/v1/users' do
 
       error_response = JSON.parse(response.body, symbolize_names: true)
       error_message = "Email has already been taken, Password confirmation doesn't match Password"
-
+      
       expect(response.status).to eq(400)
       expect(error_response[:invalid]).to eq(error_message)
     end
