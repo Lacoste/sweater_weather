@@ -17,7 +17,7 @@ class Cities < ApplicationRecord
                     longitude: city_info.long,
                     name: city_info.details[0][:short_name],
                     state_abrev: city_info.details[2][:short_name],
-                    country: city_info.details[3][:short_name])
+                    country: city_info.details[3][:long_name])
     end
   end
 
