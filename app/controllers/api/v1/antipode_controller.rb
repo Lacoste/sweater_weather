@@ -13,6 +13,7 @@ class Api::V1::AntipodeController < ApplicationController
 
   def search_loc
     search_loc = LocationService.new(params[:loc])
+    binding.pry
   end
 
   def anti_loc
@@ -21,6 +22,10 @@ class Api::V1::AntipodeController < ApplicationController
 
   def anti_lnglat
     anti_lnglat = anti_loc.full_info[:data][:attributes]
+  end
+
+  def antipod_search_info
+    # create an object..
   end
 
 end
