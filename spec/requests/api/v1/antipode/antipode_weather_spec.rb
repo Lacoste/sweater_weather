@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'GET /api/v1/antipode' do
   it 'returns weather information for the antipode of a search location' do
-    search_location = "Hong Kong"
-    # format?
+
+    get "/api/v1/antipode?loc=hongkong"
 
     antipode_info = JSON.parse(response.body, symbolize_names: true)
 
@@ -13,7 +13,7 @@ describe 'GET /api/v1/antipode' do
     expect(antipode_info[:data].present?).to eq(true)
 
     expected_keys = :id, :type, :attributes, :search_location
-    
+
     expect(antipode_info[:data].present?).to eq(true)
     expect(antipode_info[:data].keys).to eq(expected_keys)
   end
