@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'DarkSkyService' do
   describe 'Instance Methods' do
 
-    context '#all_info' do
+    context '#full_info' do
       it 'returns all weather data' do
 
         latitude = 39.7392
