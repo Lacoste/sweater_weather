@@ -8,5 +8,5 @@
 Cities.destroy_all
 
 cities = Cities.create(
-  {search_name: "denver,co", latitude: 39.7392, longitude: 104.9902, name:"Denver", state_abrev: "CO", country: "United States" }
+  {search_name: "denver,co", latitude: 39.7392, longitude: -104.9902, name:"Denver", state_abrev: "CO", country: "United States" }
 )

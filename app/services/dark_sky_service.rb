@@ -9,16 +9,6 @@ class DarkSkyService
     get_json
   end
 
-# potential additional sorting methods
-  # def current_overview
-  # end
-  #
-  # def current_details
-  # end
-  #
-  # def forecast
-  # end
-
   private
 
   def get_json
