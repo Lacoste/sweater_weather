@@ -1,9 +1,9 @@
 class AntipodeWeatherSerializer
 
-  def initialize(weather_data, search_loc, antipode_name)
-    @weather_data = weather_data.api_weather_data[:currently]
-    @antipode = Cities.find_by(name: antipode_name)
-    @search_city = search_loc.search_name
+  def initialize(antipode_data)
+    @antipode = antipode_data.city
+    @weather_data = antipode_data.weather
+    @search_city = antipode_data.search_city
   end
 
   def to_hash

@@ -6,7 +6,6 @@ describe 'GET /api/v1/antipode' do
     get "/api/v1/antipode?loc=hongkong"
 
     antipode_info = JSON.parse(response.body, symbolize_names: true)
-
     expect(response.status).to eq(200)
 
     expect(antipode_info.class).to eq(Hash)
