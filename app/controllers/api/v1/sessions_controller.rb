@@ -1,5 +1,4 @@
-class Api::V1::SessionsController < ApplicationController
-  protect_from_forgery with: :null_session
+class Api::V1::SessionsController < ActionController::API
 
   def create
     user = User.find_by(email: user_params[:email])
