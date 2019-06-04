@@ -5,7 +5,7 @@ class Cities < ApplicationRecord
                         :name,
                         :state_abrev,
                         :country
-
+  has_many :favorites
 
   def self.find_or_create_city(location)
     if Cities.find_by(search_name: location)
