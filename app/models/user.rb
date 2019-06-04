@@ -5,9 +5,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def generate_api_key
-    require 'securerandom'
-    key = SecureRandom.urlsafe_base64
-    self.api_key = key
+    self.api_key = SecureRandom.urlsafe_base64
   end
 
 end
