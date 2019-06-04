@@ -19,7 +19,7 @@ describe 'POST /api/v1/users' do
   end
 
   context 'with invalid information' do
-    it 'returns an error message and a 404 code' do
+    it 'returns an error message and a 400 code' do
       user = create(:user, email: "whatever@example.com")
 
       post_body =  {
