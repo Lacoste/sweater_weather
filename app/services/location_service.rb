@@ -23,7 +23,7 @@ class LocationService
   end
 
   def anti_name
-    info = get_antipod_json
+    info = get_antipode_json
     info[:results][1][:address_components][0][:long_name]
   end
 
@@ -34,7 +34,7 @@ class LocationService
 
   private
 
-  def get_antipod_json
+  def get_antipode_json
     response = conn.get("?latlng=#{@location}")
     JSON.parse(response.body, symbolize_names: true)
   end

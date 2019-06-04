@@ -27,7 +27,7 @@ class AntipodeData
   end
 
   def anti_loc
-    anti_loc = AntipodLocationService.new("#{search_loc.lat}","#{search_loc.long}")
+    anti_loc = AntipodeLocationService.new("#{search_loc.lat}","#{search_loc.long}")
   end
 
   def search_loc

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'AntipodLocationService' do
+describe 'AntipodeLocationService' do
   describe 'Instance Methods' do
 
     context '#full_info' do
@@ -9,7 +9,7 @@ describe 'AntipodLocationService' do
         search_loc_lat = 22.3193
         search_loc_long = 114.1693
 
-        antipode_info = AntipodLocationService.new(search_loc_lat, search_loc_long).full_info
+        antipode_info = AntipodeLocationService.new(search_loc_lat, search_loc_long).full_info
 
         expected_keys = :id, :type, :attributes
 

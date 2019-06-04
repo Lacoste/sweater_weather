@@ -1,4 +1,4 @@
-class AntipodLocationService
+class AntipodeLocationService
 
   def initialize(search_loc_lat, search_loc_long)
     @latitude = search_loc_lat
@@ -16,7 +16,6 @@ class AntipodLocationService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  # http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193&long=114.1693
   def conn
     Faraday.new('http://amypode.herokuapp.com/api/v1/antipodes') do |f|
       f.headers['api_key']=ENV['AMYPOD_API_KEY']
