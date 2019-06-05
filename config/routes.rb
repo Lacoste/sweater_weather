@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
       get '/favorites', to: 'favorites#index'
       post '/favorites', to: 'favorites#create'
+      delete '/favorites', to: 'favorites#destroy'
 
       get '/forecast', to: 'forecast#show'
 
