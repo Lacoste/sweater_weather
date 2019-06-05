@@ -11,6 +11,12 @@ class Api::V1::FavoritesController < ActionController::API
       render json: FavoritesSerializer.new(user.favorites).to_hash
     end
 
+    def destroy
+      to_remove = user.favorites.find_by(cities_id: favorite_to_remove.id)
+      to_remove.destroy
+      render json: FavoritesSerializer.new(user.favorites).to_hash
+    end
+
     private
 
     def search_location
@@ -19,6 +25,17 @@ class Api::V1::FavoritesController < ActionController::API
     end
 
     def favorite_params
+      params.permit(:location, :api_key)
+    end
+
+    def favorite_to_remove
+      split = destroy_params[:location].split(",")
+      city_input = split[0]
+      state_input = split[1].delete(" ")
+      city = Cities.find_by(name: city_input, state_abrev: state_input)
+    end
+
+    def destroy_params
       params.permit(:location, :api_key)
     end
 
