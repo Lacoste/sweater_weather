@@ -9,7 +9,7 @@ Favorite.destroy_all
 Cities.destroy_all
 User.destroy_all
 
-user = User.create(email: 'corey@email.com', password_digest: 'password', api_key: 'abc123')
+user = User.create(email: 'corey@email.com', password: 'password', password_confirmation: 'password', api_key: 'abc123')
 
 cities = Cities.create(
   { search_name: "denver,co", latitude: 39.7392, longitude: -104.9902, name:"Denver", state_abrev: "CO", country: "United States" }
