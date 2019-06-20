@@ -95,5 +95,5 @@ Rails 5.2.3
 
 ## Future Iterations
 - Build out an accompanying front end application in JavaScript.
-- Using JavaScript for ceratin time related keys to use client's time zone.
+- Using JavaScript for ceratain time related keys to use client's time zone.
 
