@@ -11,13 +11,13 @@ The original project link can be found here: https://backend.turing.io/module3/p
 *An api key is created and given when a user creates an account. That key is only needed for account specific requests*
 
 Weather for a city:  
-**GET**  `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,co`
+**GET**   `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,co`
 
-*Background images for a city:*  
-**GET**  `https://sweater-weather-3400.herokuapp.com/api/v1/backgrounds?location=denver,co`
+Background images for a city:  
+**GET**   `https://sweater-weather-3400.herokuapp.com/api/v1/backgrounds?location=denver,co`
 
-*Creating an account:*  
-**POST**  `https://sweater-weather-3400.herokuapp.com/api/v1/users` 
+Creating an account:  
+**POST**    `https://sweater-weather-3400.herokuapp.com/api/v1/users` 
 ```
 Body example:
 {
@@ -27,8 +27,8 @@ Body example:
 }
 ```
 
-*Logging in:*  
-**POST**  `https://sweater-weather-3400.herokuapp.com/api/v1/sessions`  
+Logging in:  
+**POST**    `https://sweater-weather-3400.herokuapp.com/api/v1/sessions`  
 ```
 Body example:
 {
@@ -36,8 +36,8 @@ Body example:
   "password": "password"
 }
 ```
-*Adding Favorite Locations*  
-**POST**  `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
+Adding Favorite Locations  
+**POST**    `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
 ```
 Body example:
 {
@@ -46,8 +46,8 @@ Body example:
 }
 ```
 
-*Listing Favorite Locations*  
-**GET**  `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
+Listing Favorite Locations  
+**GET**   `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
 ```
 Body example:
 {
@@ -55,22 +55,22 @@ Body example:
 }
 ```
 
-*Removing Favorite Locations:*  
-DELETE `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
-*Body example:*
+Removing Favorite Locations:  
+**DELETE**    `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
 ```
+Body example:
 {
   "location": "Denver, CO",
   "api_key": "jgn983hy48thw9begh98h4539h4"
 }
 ```
 
-## Local Setup (ff desired)
+## Local Setup (*if desired*)
 Obtain and define the following API keys in a `config/application.yml` file:
 ```
   Google Geocoding - ENV['GOOGLE_API_KEY']
   Darksky Weather Data - ENV['DARK_SKY_API_KEY']
-  Unsplash Phots - ENV['UNSPLASH_API_KEY']
+  Unsplash Photos - ENV['UNSPLASH_API_KEY']
 ```
 Clone down the repo
 ```
@@ -89,10 +89,11 @@ Run the test suite:
 $ bundle exec rspec
 ```
 
-
 ## Versions
+Ruby 2.4.1
+Rails 5.2.3
 
 ## Future Iterations
-- build out accompanying front end app in JavaScript
-- use JavaScript to ceratin time related keys to use client's time zone
+- Build out an accompanying front end application in JavaScript.
+- Using JavaScript for ceratin time related keys to use client's time zone.
 
