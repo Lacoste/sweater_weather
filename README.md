@@ -8,7 +8,7 @@ This is a solo project completed at the Turing School of Software & Design - as 
 The original project link can be found here: https://backend.turing.io/module3/projects/sweater_weather
 
 ## Endpoints
-* *An api key is created and given when a user creates an account. That key is only needed for account specific requests *
+*An api key is created and given when a user creates an account. That key is only needed for account specific requests *
 
 **Weather for a city:**  
 GET `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,co`
@@ -17,8 +17,8 @@ GET `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,
 GET `https://sweater-weather-3400.herokuapp.com/api/v1/backgrounds?location=denver,co`
 
 **Creating an account:**  
-POST `https://sweater-weather-3400.herokuapp.com/api/v1/users`
-*Body should include:*
+POST `https://sweater-weather-3400.herokuapp.com/api/v1/users` 
+*Body example:*
 ```
 {
   "email": "whatever@example.com",
@@ -28,8 +28,8 @@ POST `https://sweater-weather-3400.herokuapp.com/api/v1/users`
 ```
 
 **Logging in:**  
-POST `https://sweater-weather-3400.herokuapp.com/api/v1/sessions`
-*Body should include:*
+POST `https://sweater-weather-3400.herokuapp.com/api/v1/sessions`  
+*Body example:*
 ```
 {
   "email": "whatever@example.com",
@@ -38,8 +38,8 @@ POST `https://sweater-weather-3400.herokuapp.com/api/v1/sessions`
 ```
 
 **Adding Favorite Locations**  
-POST `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
-*Body should include:*
+POST `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
+*Body example:*
 ```
 {
   "location": "Denver, CO",
@@ -48,8 +48,8 @@ POST `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
 ```
 
 **Listing Favorite Locations**  
-GET `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
-*Body should include:*
+GET `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
+*Body example:*
 ```
 {
   "api_key": "jgn983hy48thw9begh98h4539h4"
@@ -57,8 +57,8 @@ GET `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
 ```
 
 **Removing Favorite Locations:**  
-DELETE `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
-*Body should include:*
+DELETE `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
+*Body example:*
 ```
 {
   "location": "Denver, CO",
