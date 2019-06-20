@@ -90,7 +90,7 @@ $ bundle exec rspec
 ```
 
 ## Versions
-Ruby 2.4.1
+Ruby 2.4.1 
 Rails 5.2.3
 
 ## Future Iterations
