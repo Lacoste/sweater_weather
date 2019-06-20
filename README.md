@@ -11,6 +11,7 @@ The original project link can be found here: https://backend.turing.io/module3/p
 *An api key is created and given when a user creates an account. That key is only needed for account specific requests*
 
 Weather for a city:  
+  
 **GET**   `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,co`
 
 Background images for a city:  
