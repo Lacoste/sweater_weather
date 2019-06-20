@@ -8,17 +8,17 @@ This is a solo project completed at the Turing School of Software & Design - as 
 The original project link can be found here: https://backend.turing.io/module3/projects/sweater_weather
 
 ## Endpoints
+* *An api key is created and given when a user creates an account. That key is only needed for account specific requests *
 
-
-Weather for a city:  
+**Weather for a city:**  
 GET `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,co`
 
-Background images for a city:  
+**Background images for a city:**  
 GET `https://sweater-weather-3400.herokuapp.com/api/v1/backgrounds?location=denver,co`
 
-Creating an account:  
+**Creating an account:**  
 POST `https://sweater-weather-3400.herokuapp.com/api/v1/users`
-Body should include:
+*Body should include:*
 ```
 {
   "email": "whatever@example.com",
@@ -27,7 +27,44 @@ Body should include:
 }
 ```
 
-* *no key is needed*
+**Logging in:**  
+POST `https://sweater-weather-3400.herokuapp.com/api/v1/sessions`
+*Body should include:*
+```
+{
+  "email": "whatever@example.com",
+  "password": "password"
+}
+```
+
+**Adding Favorite Locations**  
+POST `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
+*Body should include:*
+```
+{
+  "location": "Denver, CO",
+  "api_key": "jgn983hy48thw9begh98h4539h4"
+}
+```
+
+**Listing Favorite Locations**  
+GET `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
+*Body should include:*
+```
+{
+  "api_key": "jgn983hy48thw9begh98h4539h4"
+}
+```
+
+**Removing Favorite Locations:**  
+DELETE `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
+*Body should include:*
+```
+{
+  "location": "Denver, CO",
+  "api_key": "jgn983hy48thw9begh98h4539h4"
+}
+```
 
 ## External API's Used
 
