@@ -1,6 +1,6 @@
 # Sweater Weather
 
-This is a solo project completed at the Turing School of Software & Design - as the last project of Module 3 (Professional Rails Applications). The goal of this project was to build out a number of API endpoints which would provide the necessary information for creating a mock web page (below). In order to do achieve this, multiple external API's were called, Models and PORO's were created, and custom Serializers were used. 
+This is a solo project completed at the Turing School of Software & Design - as the last project of Module 3 (Professional Rails Applications). The goal of this project was to build out a number of API endpoints which would provide the necessary information for creating a mock web page (below). In order to do achieve this, multiple external API's were called, Models and PORO's were created, and custom Serializers were used.
 
 ![mock](mock_webpage.png)
 
@@ -17,9 +17,9 @@ Background images for a city:
 **GET**   `https://sweater-weather-3400.herokuapp.com/api/v1/backgrounds?location=denver,co`
 
 Creating an account:  
-**POST**    `https://sweater-weather-3400.herokuapp.com/api/v1/users` 
+**POST**    `https://sweater-weather-3400.herokuapp.com/api/v1/users`
 ```
-Body example:
+Example body:
 {
   "email": "whatever@example.com",
   "password": "password"
@@ -30,42 +30,42 @@ Body example:
 Logging in:  
 **POST**    `https://sweater-weather-3400.herokuapp.com/api/v1/sessions`  
 ```
-Body example:
+Example body:
 {
   "email": "whatever@example.com",
   "password": "password"
 }
 ```
-Adding Favorite Locations  
-**POST**    `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
+Adding Favorite Locations:  
+**POST**    `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
 ```
-Body example:
+Example body:
 {
   "location": "Denver, CO",
   "api_key": "jgn983hy48thw9begh98h4539h4"
 }
 ```
 
-Listing Favorite Locations  
-**GET**   `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
+Listing Favorite Locations:  
+**GET**   `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
 ```
-Body example:
+Example body:
 {
   "api_key": "jgn983hy48thw9begh98h4539h4"
 }
 ```
 
 Removing Favorite Locations:  
-**DELETE**    `https://sweater-weather-3400.herokuapp.com/api/v1/favorites` 
+**DELETE**    `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
 ```
-Body example:
+Example body:
 {
   "location": "Denver, CO",
   "api_key": "jgn983hy48thw9begh98h4539h4"
 }
 ```
 
-## Local Setup (*if desired*)
+## Local Setup
 Obtain and define the following API keys in a `config/application.yml` file:
 ```
   Google Geocoding - ENV['GOOGLE_API_KEY']
@@ -95,5 +95,5 @@ Rails 5.2.3
 
 ## Future Iterations
 - Build out an accompanying front end application in JavaScript.
-- Using JavaScript for ceratain time related keys to use client's time zone.
-
+- Using JavaScript for certain time related keys to use client's time zone.
+- Implement low-level caching strategies.
