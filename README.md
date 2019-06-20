@@ -16,16 +16,30 @@ The original project link can be found here: https://backend.turing.io/module3/p
 
 ## External API's Used
 
-## Setup
-- clone 
-- bundle install
-- rake db:{create,migrate}
 
-Clone - link
-
-Obtain and define the following API keys in an `config/application.yml` file:
-  YouTube - `ENV['YOUTUBE_API_KEY']`
-  Github -  `ENV['GITHUB_API_KEY']`
+## Local Setup (ff desired)
+Obtain and define the following API keys in a `config/application.yml` file:
+```
+  Google Geocoding - ENV['GOOGLE_API_KEY']
+  Darksky Weather Data - ENV['DARK_SKY_API_KEY']
+  Unsplash Phots - ENV['UNSPLASH_API_KEY']
+```
+Clone down the repo
+```
+$ git clone https://github.com/CSheesley/sweater_weather
+```
+Install the gem packages
+```
+$ bundle install
+```
+Set up the database
+```
+$ rake db:{create,migrate,seed}
+```
+Run the test suite:
+```
+$ bundle exec rspec
+```
 
 
 ## Versions
