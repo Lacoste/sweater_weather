@@ -7,11 +7,8 @@ This is a solo project completed at the Turing School of Software & Design - as 
 
 The original project link can be found here: https://backend.turing.io/module3/projects/sweater_weather
 
-
-
-
 ## Endpoints
-*no key is needed*
+
 
 Weather for a city:  
 GET `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,co`
@@ -19,10 +16,18 @@ GET `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,
 Background images for a city:  
 GET `https://sweater-weather-3400.herokuapp.com/api/v1/backgrounds?location=denver,co`
 
+Creating an account:  
+POST `https://sweater-weather-3400.herokuapp.com/api/v1/users`
+Body should include:
+```
+{
+  "email": "whatever@example.com",
+  "password": "password"
+  "password_confirmation": "password"
+}
+```
 
-
-
-- Heroku
+* *no key is needed*
 
 ## External API's Used
 
