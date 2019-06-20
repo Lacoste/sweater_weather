@@ -13,10 +13,10 @@ The original project link can be found here: https://backend.turing.io/module3/p
 ## Endpoints
 *no key is needed*
 
-Weather for a city:
+Weather for a city:  
 GET `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,co`
 
-Background images for a city:
+Background images for a city:  
 GET `https://sweater-weather-3400.herokuapp.com/api/v1/backgrounds?location=denver,co`
 
 
