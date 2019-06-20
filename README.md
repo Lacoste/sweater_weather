@@ -10,7 +10,7 @@ The original project link can be found here: https://backend.turing.io/module3/p
 ## Endpoints
 *An api key is created and given when a user creates an account. That key is only needed for account specific requests*
 
-*Weather for a city:*  
+Weather for a city:  
 **GET**  `https://sweater-weather-3400.herokuapp.com/api/v1/forecast?location=denver,co`
 
 *Background images for a city:*  
@@ -64,9 +64,6 @@ DELETE `https://sweater-weather-3400.herokuapp.com/api/v1/favorites`
   "api_key": "jgn983hy48thw9begh98h4539h4"
 }
 ```
-
-## External API's Used
-
 
 ## Local Setup (ff desired)
 Obtain and define the following API keys in a `config/application.yml` file:
