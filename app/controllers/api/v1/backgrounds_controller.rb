@@ -5,6 +5,4 @@ class Api::V1::BackgroundsController < ApplicationController
     render json: BackgroundsSerializer.new(background_data).to_hash
   end
 
-  private
-
 end

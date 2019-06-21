@@ -28,4 +28,12 @@ class Cities < ApplicationRecord
     end
   end
 
+  def location
+    "#{name}, #{state_abrev}"
+  end
+
+  def weather_data
+    WeatherData.new(search_name)
+  end
+
 end

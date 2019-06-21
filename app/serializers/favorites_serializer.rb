@@ -1,32 +1,35 @@
 class FavoritesSerializer
 
   def initialize(favorites)
-    @favorites = favorites.formatted_weather_data
+    @favorites = favorites
   end
 
   def to_hash
-    @favorites.map do |fav|
-      fav_hash = {}
-      fav_hash[:location] = "#{fav[0][:name]}, #{fav[0][:state_abrev]}"
-      fav_hash[:current_weather] = currently_hash(fav[0], fav[1], fav[2])
-      fav_hash
+    @favorites.map do |favorite|
+      {
+        location: favorite.cities.location,
+        current_weather: current_weather(favorite.cities)
+      }
     end
   end
 
-  def currently_hash(location, current_data, today)
+  def current_weather(city)
+    weather_data = city.weather_data
+
     {
-      icon: current_data[:icon],
-      conditions: current_data[:summary],
-      temp: current_data[:temperature].round,
-      high: today[:temperatureHigh].round,
-      low: today[:temperatureLow].round,
-      city_state: "#{location.name}, #{location.state_abrev}",
-      country: location.country,
-      search_time: Time.at(current_data[:time]).strftime("%l:%M %p"),
-      date: Time.at(current_data[:time]).strftime("%m/%d"),
-      latitude: location.latitude,
-      longitude: location.longitude
+      icon: weather_data.currently[:icon],
+      conditions: weather_data.currently[:summary],
+      temp: weather_data.currently[:temperature].round,
+      high: weather_data.today[:temperatureHigh].round,
+      low: weather_data.today[:temperatureLow].round,
+      city_state: city.location,
+      country: city.country,
+      search_time: Time.at(weather_data.currently[:time]).strftime("%l:%M %p"),
+      date: Time.at(weather_data.currently[:time]).strftime("%m/%d"),
+      latitude: city.latitude,
+      longitude: city.longitude
     }
   end
+
 
 end
