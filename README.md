@@ -22,7 +22,7 @@ Creating an account:
 Example body:
 {
   "email": "whatever@example.com",
-  "password": "password"
+  "password": "password",
   "password_confirmation": "password"
 }
 ```
