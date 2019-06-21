@@ -7,8 +7,8 @@ class FavoritesSerializer
   def to_hash
     @favorites.map do |favorite|
       {
-        location: favorite.cities.location,
-        current_weather: current_weather(favorite.cities)
+        location: favorite.city.location,
+        current_weather: current_weather(favorite.city)
       }
     end
   end

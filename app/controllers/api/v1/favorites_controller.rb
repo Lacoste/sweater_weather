@@ -2,8 +2,8 @@ class Api::V1::FavoritesController < ApiController
   before_action :user
 
   def create
-    city = Cities.find_or_create_city(search_location)
-    Favorite.create(user_id: user.id, cities_id: city.id, name: city.name)
+    city = City.find_or_create_city(search_location)
+    Favorite.create(user_id: user.id, city_id: city.id, name: city.name)
     render status: 201, json: { outcome: "Successfully Added" }
   end
 
@@ -12,7 +12,7 @@ class Api::V1::FavoritesController < ApiController
   end
 
   def destroy
-    to_remove = user.favorites.find_by(cities_id: favorite_to_remove.id)
+    to_remove = user.favorites.find_by(city_id: favorite_to_remove.id)
     to_remove.destroy
     render json: FavoritesSerializer.new(user.favorites).to_hash
   end
@@ -32,7 +32,7 @@ class Api::V1::FavoritesController < ApiController
     split = destroy_params[:location].split(",")
     city_input = split[0]
     state_input = split[1].delete(" ")
-    city = Cities.find_by(name: city_input, state_abrev: state_input)
+    city = City.find_by(name: city_input, state_abrev: state_input)
   end
 
   def destroy_params

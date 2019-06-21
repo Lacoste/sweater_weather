@@ -5,11 +5,11 @@ describe 'DELETE /api/v1/favorites' do
     it 'removes a city from the list of favorites' do
       user = create(:user, api_key: "abc123")
 
-      denver = Cities.find_or_create_city("denver,co")
-      golden = Cities.find_or_create_city("golden,co")
+      denver = City.find_or_create_city("denver,co")
+      golden = City.find_or_create_city("golden,co")
 
-      user.favorites.create(cities_id: denver.id)
-      user.favorites.create(cities_id: golden.id)
+      user.favorites.create(city_id: denver.id)
+      user.favorites.create(city_id: golden.id)
 
       expect(user.favorites.count).to eq(2)
 
@@ -34,11 +34,11 @@ describe 'DELETE /api/v1/favorites' do
     it 'does not remove a city from the favorites, and a 401 code is returned' do
       user = create(:user, api_key: "abc123")
 
-      denver = Cities.find_or_create_city("denver,co")
-      golden = Cities.find_or_create_city("golden,co")
+      denver = City.find_or_create_city("denver,co")
+      golden = City.find_or_create_city("golden,co")
 
-      user.favorites.create(cities_id: denver.id)
-      user.favorites.create(cities_id: golden.id)
+      user.favorites.create(city_id: denver.id)
+      user.favorites.create(city_id: golden.id)
 
       expect(user.favorites.count).to eq(2)
 

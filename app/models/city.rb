@@ -1,4 +1,4 @@
-class Cities < ApplicationRecord
+class City < ApplicationRecord
   validates_presence_of :search_name,
                         :latitude,
                         :longitude,
@@ -8,11 +8,11 @@ class Cities < ApplicationRecord
   has_many :favorites
 
   def self.find_or_create_city(location)
-    if Cities.find_by(search_name: location)
-      return Cities.find_by(search_name: location)
+    if City.find_by(search_name: location)
+      return City.find_by(search_name: location)
     else
       city_info = LocationService.new(location)
-      Cities.create(search_name: location,
+      City.create(search_name: location,
                     latitude: city_info.lat,
                     longitude: city_info.long,
                     name: city_info.details[0][:short_name],

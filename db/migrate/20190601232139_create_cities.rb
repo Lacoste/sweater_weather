@@ -1,4 +1,4 @@
-class CreateCities < ActiveRecord::Migration[5.2]
+class CreateCity < ActiveRecord::Migration[5.2]
   def change
     create_table :cities do |t|
       t.string :search_name

@@ -5,11 +5,11 @@ describe 'GET /api/v1/favorites' do
     it 'returns a list of favorite locations and current weather info' do
       user = create(:user, api_key: "abc123")
 
-      denver = Cities.find_or_create_city("denver,co")
-      golden = Cities.find_or_create_city("golden,co")
+      denver = City.find_or_create_city("denver,co")
+      golden = City.find_or_create_city("golden,co")
 
-      user.favorites.create(cities_id: denver.id)
-      user.favorites.create(cities_id: golden.id)
+      user.favorites.create(city_id: denver.id)
+      user.favorites.create(city_id: golden.id)
 
       get_body = {
         "api_key": "abc123"
@@ -33,11 +33,11 @@ describe 'GET /api/v1/favorites' do
     it 'no favorites are shown, and a 401 status code is returned' do
       user = create(:user, api_key: "abc123")
 
-      denver = Cities.find_or_create_city("denver,co")
-      golden = Cities.find_or_create_city("golden,co")
+      denver = City.find_or_create_city("denver,co")
+      golden = City.find_or_create_city("golden,co")
 
-      user.favorites.create(cities_id: denver.id)
-      user.favorites.create(cities_id: golden.id)
+      user.favorites.create(city_id: denver.id)
+      user.favorites.create(city_id: golden.id)
 
       get_body = {
         "api_key": "xyz123"
