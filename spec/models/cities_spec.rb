@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Cities, type: :model do
+describe City, type: :model do
   describe 'Validations' do
     it { should validate_presence_of :search_name }
     it { should validate_presence_of :latitude }
@@ -19,17 +19,17 @@ describe Cities, type: :model do
       it 'finds or creates a new city based on search input info' do
         search_name = "denver,co"
 
-        expect(Cities.count).to eq(0)
+        expect(City.count).to eq(0)
 
-        Cities.find_or_create_city(search_name)
+        City.find_or_create_city(search_name)
 
-        expect(Cities.count).to eq(1)
-        expect(Cities.first.name).to eq("Denver")
-        expect(Cities.first.state_abrev).to eq("CO")
+        expect(City.count).to eq(1)
+        expect(City.first.name).to eq("Denver")
+        expect(City.first.state_abrev).to eq("CO")
 
-        Cities.find_or_create_city(search_name)
+        City.find_or_create_city(search_name)
         #finds existing city - no new city is added to table
-        expect(Cities.count).to eq(1)
+        expect(City.count).to eq(1)
       end
     end
   end
@@ -37,7 +37,7 @@ describe Cities, type: :model do
   describe 'Instance Methods' do
     context '#find_or_create_background' do
       it 'finds a background_img for a city if it does not already have one' do
-        denver = Cities.create(
+        denver = City.create(
           { search_name: "denver,co",
             latitude: 39.7392,
             longitude: 104.9902,
@@ -56,7 +56,7 @@ describe Cities, type: :model do
       end
 
       it 'does not creates a background_img for a city which already has one' do
-        denver = Cities.create(
+        denver = City.create(
           { search_name: "denver,co",
             latitude: 39.7392,
             longitude: 104.9902,

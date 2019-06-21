@@ -5,7 +5,7 @@ class WeatherData
   end
 
   def location
-    @_city ||= Cities.find_or_create_city(@search_info)
+    @_city ||= City.find_or_create_city(@search_info)
     @_city.find_or_create_background
     return @_city
   end

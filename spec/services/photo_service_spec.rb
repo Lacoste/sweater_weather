@@ -5,7 +5,7 @@ describe 'PhotoService', type: :service do
     context 'city_img' do
       it 'returns a URL for a background image based on search location' do
 
-        denver = Cities.create(
+        denver = City.create(
           { search_name: "denver,co",
             latitude: 39.7392,
             longitude: 104.9902,
