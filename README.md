@@ -69,7 +69,8 @@ Example body:
 Obtain and define the following API keys in a `config/application.yml` file:
 ```
   Google Geocoding - ENV['GOOGLE_API_KEY']
-  Darksky Weather Data - ENV['DARK_SKY_API_KEY']
+ *deprecated* Darksky Weather Data - ENV['DARK_SKY_API_KEY']
+    https://www.visualcrossing.com/resources/news/how-can-i-replace-the-darksky-api/
   Unsplash Photos - ENV['UNSPLASH_API_KEY']
 ```
 Clone down the repo
